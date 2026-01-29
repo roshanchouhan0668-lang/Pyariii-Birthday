@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pyariii Birthday Surprise</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco",
+             "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+    overflow-x: hidden;
+  }
+
+  h1 {
+    color: white;
+    font-size: 8vw;
+    margin-top: 20px;
+    animation: blink 1.2s infinite;
+  }
+
+  @keyframes blink {
+    0%,100% {opacity: 1;}
+    50% {opacity: 0.6;}
+  }
+
+  .card {
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  }
+
+  .msg {
+    font-size: 18px;
+    color: #444;
+    line-height: 1.6;
+  }
+
+  .photos img {
+    width: 90%;
+    max-width: 280px;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+
+  .balloon {
+    position: absolute;
+    font-size: 12vw;
+    animation: float 6s infinite ease-in-out;
+  }
+
+  @keyframes float {
+    0% {transform: translateY(100vh);}
+    100% {transform: translateY(-20vh);}
+  }
+
+  #lockScreen {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #ff9a9e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+
+  input {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    margin-top: 10px;
+    width: 220px;
+    text-align: center;
+  }
+
+  button {
+    margin-top: 15px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    background: white;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #ffe5ec;
+  }
+
+</style>
+</head>
+
+<body>
+
+<!-- 🔒 Password Lock Screen -->
+<div id="lockScreen">
+  <h2 style="color:white;"> Surprise for Pyariii 🎁</h2>
+  <p style="color:white;">Enter Password ❤️</p>
+  <input type="password" id="pass" placeholder="Password">
+  <button onclick="checkPass()">Open Surprise</button>
+  <p id="wrong" style="color:white;"></p>
+</div>
+
+
+<h1>🎉 Happy Birthday Pyariii 🎉</h1>
+
+<!-- Balloons -->
+<div class="balloon" style="left:10%;">🎈</div>
+<div class="balloon" style="left:40%; animation-delay:1s;">🎈</div>
+<div class="balloon" style="left:70%; animation-delay:2s;">🎈</div>
+
+<!-- Message Card -->
+<div class="card">
+  <h2>💖 For My Pyariii 💖</h2>
+  <p class="msg">
+    Happy Birthday meri Pyariii ❤️😙<br><br>
+    Tu hasti hui pyari lgti hai tension mt liya kr fokat<br>
+    Hamesha khush rehna or muskurati rehna 😁<br>
+    Bhale kuch bhi hojaye kitna bhi ladai hojaye kbhi mujhse dur mt jana 🎂💫<br>
+    Or hamesha mere sath rehna <br>
+    "samjhe na duniya tu to mujhko samjhiyo , Sang rahiyo"🤌🏻<br>
+     Once again Happy birthday meri Rasmalai or boondi ki laddo 😂<br><br>
+   you are Always special for me & Bestest freind forever 💖
+  </p>
+</div>
+
+<!-- Photos Section -->
+<div class="card photos">
+  <h2>📸 Our Memories</h2>
+
+  <!-- Replace these photo links -->
+  <img src="photo1.jpg" alt="Memory 1">
+  <img src="photo2.jpg" alt="Memory 2">
+  <img src="photo3.jpg" alt="Memory 3">
+</div>
+
+<script>
+  // Password = baby + date
+  function checkPass(){
+    let p = document.getElementById("pass").value;
+    if(p === "baby30012026"){
+      document.getElementById("lockScreen").style.display="none";
+    } else {
+      document.getElementById("wrong").innerText="Wrong password 😅";
+    }
+  }
+</script>
+
+</body>
+</html>
